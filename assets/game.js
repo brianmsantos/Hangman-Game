@@ -1,7 +1,17 @@
 //create an array words to use, favorite foods 
-var foods = ["Burrito", "Burgers", "Ramen", "Chicken Wings");
+var foods = ["Burrito", "Burgers", "Ramen", "Chicken Wings"];
 
 //Choose random word from list of words in the array. 
+var randomFood = foods[Math.floor(Math.random() * foods.length)]
+
+
+function randomFood(foods) {
+    for (let i = 0; i < foods.length; index++) {
+        console.log(foods);
+    }
+}
+//Once generator has chosen the random word then it will load the word 
+//and provide the number of spots as a hint to the user. 
 
 
 
