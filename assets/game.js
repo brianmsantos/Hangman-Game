@@ -1,46 +1,46 @@
-//create an array words to use, favorite foods 
-var foods = ["Burrito", "Burgers", "Ramen", "Chicken Wings"];
+//var should be nouns 
+//create more functions
+//functions should be verbs/actions
+//function declaration up to 3-4 params best practice 
+//function functionName(params){
+//return "stuff"
+//}
 
-// //create random food from array
-// var randomNumber = Math.random() * foods.length;
+//start game 
 
-// //spit out from list into one food 
-// var food = random(foods)
-//Choose random word from list of words in the array. 
-//var randomFood = foods[Math.floor(Math.random() * foods.length)]
-
-
-function random(arr) {
-    var randomNumber = Math.floor(Math.random() * arr.length);
-    return arr[randomNumber]
+function gameStart(params) {
 
 }
 
+//make the game board
+
+//create an array of words to be used 
+var foods = ["Burrito", "Burgers", "Ramen", "Chicken Wings"];
+
+var answerArray = [];
+
+for (var i = 0; i < foods.length; i++) {
+    answerArray[i] = "_";
+}
+
+var remainingGuesses = 9;
+
+//generate a random word DONE
+function random(arr) {
+    var randomNumber = Math.floor(Math.random() * arr.length);
+    return arr[randomNumber]
+}
 console.log(random(foods))
 console.log(random(foods))
 console.log(random(["dogs", "trees", 8, 12, 7]))
 
+//set lives or guesses left 
 
-//Once generator has chosen the random word then it will load the word 
-//and provide the number of spots as a hint to the user. 
+function lives(param) {
 
+}
 
-
-//Once generator has chosen the random word then it will load the word 
-//and provide the number of spots as a hint to the user. 
-//id="word-blanks" is where this will be stored 
-//letters will load into blank spots and user guesses will decease by 1 --
+//user inputs, clicks on key events
 
 
-
-//Click a letter to start, once the letter is chosen it will either 
-//generate it in the spot where it belongs or it will make the guess counter decrease. 
-//Should this be using the innerHTML?
-
-
-
-//Make sure that once a letter is used it cannot be used again and count against you as a guess. 
-
-
-
-//You should be able to guess the word by typing it out.
+//check the input to see if it is in the hangman word
