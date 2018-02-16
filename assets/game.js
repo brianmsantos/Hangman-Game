@@ -16,13 +16,7 @@ function gameStart(params) {
 //create an array of words to be used 
 var foods = ["Burrito", "Burgers", "Ramen", "Wings", "Waffles"];
 
-var answerWord = random(foods);
-
 var underScores = [];
-
-for (var i = 0; i < foods.length; i++) {
-    answerArray[i] = ("_");
-}
 
 var remainingGuesses = 9;
 
@@ -35,14 +29,15 @@ console.log(random(foods))
 console.log(random(foods))
 console.log(random(["dogs", "trees", 8, 12, 7]))
 
+var answerWord = random(foods);
 
 //make the game board/underscores
 
 function generateUnderscores() {
-    for (var i = 0; i < foods.length; i++) {
+    for (var i = 0; i < answerWord.length; i++) {
         underScores.push("_");
     }
-    return underScores();
+    return underScores;
 }
 
 console.log(generateUnderscores());
