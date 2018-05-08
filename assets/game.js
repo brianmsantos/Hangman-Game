@@ -48,7 +48,7 @@ function gameStart() {
         // check where in word letter exists, then pop out blanks and scueesses array.
         if (isLetterInWord) {
             for (let i = 0; i < numBlanks; i++) {
-                if (selectedWord[i] = letter) {
+                if (selectedWord[i] == letter) {
                     blanksAndSuccesses[i] = letter;
                 }
             }
@@ -61,21 +61,39 @@ function gameStart() {
         // testing
         console.log(blanksAndSuccesses);
     }
-
 }
 
 function roundComplete() {
     console.log("Win Count: " + winCount + " | Loss Count: " + lossCount + " | Guesses Left" + guessesLeft);
+    //update html to reflect the most recent count stats
+    document.getElementById("guesses-left").innerHTML = guessesLeft;
+    document.getElementById("word-blanks").innerHTML = blanksAndSuccesses.join(" ");
+    document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join(" ")
+        //check if user won
+    if (lettersInChosenWord.toString() = blanksAndSuccesses.toString()) {
+        winCount++;
+        alert("You won!");
+        document.getElementById("win-counter").innerHTML = winCount;
+        gameStart()
+    }
+    //check is user lost 
+    else if (guessesLeft === 0) {
+        lossCount++;
+        alert("You lost!");
+        document.getElementById("loss-counter").innerHTML = lossCount;
+        gameStart()
+    }
 }
-
+//-----------------------------------
 // This is when the game starts 
-gameStart()
+gameStart();
 
 // onclick functions 
 document.onkeyup = function(event) {
     let letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
     checkLetters(letterGuessed);
     roundComplete();
+
     // Testing
     console.log(letterGuessed);
 }
